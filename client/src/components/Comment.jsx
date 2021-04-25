@@ -30,7 +30,13 @@ export default function Comment({ subComment, addColor, setUpdate }) {
         )}
       </div>
       {addANewComment ? (
-        <NewThread parentId={subComment._id} setUpdate={setUpdate} />
+        <NewThread
+          parentId={subComment._id}
+          setUpdate={setUpdate}
+          setAddANewComment={setAddANewComment}
+          setAddMainComment={setAddMainComment}
+          addColor={addColor}
+        />
       ) : (
         ""
       )}
@@ -50,7 +56,13 @@ export default function Comment({ subComment, addColor, setUpdate }) {
       {children && children.length > 0 ? (
         addMainComment ? (
           <div className="title">
-            <NewThread parentId={subComment._id} setUpdate={setUpdate} />
+            <NewThread
+              parentId={subComment._id}
+              setUpdate={setUpdate}
+              setAddANewComment={setAddANewComment}
+              setAddMainComment={setAddMainComment}
+              addColor={addColor}
+            />
           </div>
         ) : (
           <div className="btm">

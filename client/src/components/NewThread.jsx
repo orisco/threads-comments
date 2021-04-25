@@ -7,6 +7,8 @@ export default function NewThread({
   addColor,
   parentId,
   setUpdate,
+  setAddANewComment,
+  setAddMainComment,
 }) {
   const params = useParams();
   const history = useHistory();
@@ -41,6 +43,8 @@ export default function NewThread({
         title: threadTitle,
       });
       setUpdate(true);
+      setAddANewComment(false);
+      setAddMainComment(false);
     }
   };
 

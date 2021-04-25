@@ -12,7 +12,7 @@ export default function MainThread() {
   const [colorPicker, setColorPicker] = useState(false); // color picker is clicked
   const [colorChangeId, setColorChangeId] = useState(""); // comment ID for color picker change
 
-  const [update, setUpdate] = useState(false);
+  const [update, setUpdate] = useState(false); // update comment on main screen
 
   useEffect(() => {
     setUpdate(false);
