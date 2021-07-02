@@ -1,6 +1,29 @@
 const router = require("express").Router();
 const { Thread } = require("../db/models/thread.model.js");
 
+router.get("/", async (req, res) => {
+  try {
+    // if (req.params.searchInput === "") {
+    //   console.log("hi");
+    const getAllThreads = await Thread.find();
+    // } else {
+    //   const getAllThreads = await Thread.find({
+    //     title: `/${req.params.searchInput}/i`,
+    //   });
+    // }
+    // if (req.body.title) {
+    //   const { title } = req.body;
+    //   const getAllThreads = await Thread.find({ title: title });
+    // } else {
+
+    // }
+
+    res.status(200).json(getAllThreads);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+});
+
 router.get("/:threadId", async (req, res) => {
   try {
     const getThread = await Thread.find({ _id: req.params.threadId });
